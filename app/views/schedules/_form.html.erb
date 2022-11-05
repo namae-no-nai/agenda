@@ -1,0 +1,37 @@
+<%= form_with(model: schedule) do |form| %>
+  <% if schedule.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+        <% schedule.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <label for="begin_time", style="display:block;">Início</label>
+    <%= form.datetime_field :begin_time %>
+  </div>
+
+  <div>
+    <label for="end_time", style="display:block;">Fim</label>
+    <%= form.datetime_field :end_time %>
+  </div>
+
+  <div>
+    <label for="subject", style="display:block;">Motivo da Reunião</label>
+    <%= form.text_field :subject %>
+  </div>
+
+  <div>
+    <label for="description", style="display:block;">Descrição</label>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit "Confirmar", class:"btn btn-primary" %>
+  </div>
+<% end %>
