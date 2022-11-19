@@ -1,6 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @schedule %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Início</th>
+      <th scope="col">Fim</th>
+      <th scope="col">Nome da reunião</th>
+      <th scope="col">Descrição</th>
+    </tr>
+  </thead>
+  <%= render @schedule %>
+</table>
+</div>
 
 <div class='py-3'>
   <%= link_to "Editar agendamento ", edit_schedule_path(@schedule) %> |

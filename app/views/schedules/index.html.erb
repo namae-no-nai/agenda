@@ -5,12 +5,19 @@
 <h5>Sua agenda</h5>
 
 <div id="schedules">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Início</th>
+      <th scope="col">Fim</th>
+      <th scope="col">Nome da reunião</th>
+      <th scope="col">Descrição</th>
+    </tr>
+  </thead>
   <% @schedules.each do |schedule| %>
     <%= render schedule %>
-    <p>
-      <%= link_to "Mostrar Agendamento", schedule %>
-    </p>
   <% end %>
+</table>
 </div>
 
 <%= link_to "Novo agendamento", new_schedule_path %>

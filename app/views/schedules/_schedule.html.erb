@@ -1,22 +1,9 @@
-<div id="<%= dom_id schedule %>">
-  <p>
-    <strong>Início:</strong>
-    <%= schedule.begin_time %>
-  </p>
-
-  <p>
-    <strong>Fim:</strong>
-    <%= schedule.end_time %>
-  </p>
-
-  <p>
-    <strong>Nome da reunião:</strong>
-    <%= schedule.subject %>
-  </p>
-
-  <p>
-    <strong>Descrição:</strong>
-    <%= schedule.description %>
-  </p>
-
-</div>
+<tbody>
+  <tr>
+    <td><%= schedule.begin_time&.strftime("%H:%M %d/%m/%y") %></th>
+    <td><%= schedule.end_time&.strftime("%H:%M %d/%m/%y") %></td>
+    <td><%= schedule.subject %></td>
+    <td><%= schedule.description %></td>
+    <td><%= link_to "Mostrar Agendamento", schedule %></td>
+  </tr>
+</tbody>
